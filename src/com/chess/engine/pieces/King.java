@@ -59,6 +59,11 @@ public class King extends Piece{
         return Collections.unmodifiableList(legalMoves);
     }
 
+    @Override
+    public King movePiece(Move move) {
+        return new King(move.getDestinationCoordinate(), move.getMovedPiece().getPieceColor());
+    }
+
     private static boolean isFirstColumnExclusion(final int currentPosition, int offset) {
         if (BoardUtils.FIRST_COLUMN[currentPosition] && ((offset == -9) || (offset == -1) || (offset == 7))) {
             return true;

@@ -88,4 +88,9 @@ public class Queen extends Piece{
         return PieceType.QUEEN.toString();
     }
 
+    @Override
+    public Queen movePiece(Move move) {
+        return new Queen(move.getDestinationCoordinate(), move.getMovedPiece().getPieceColor());
+    }
+
 }

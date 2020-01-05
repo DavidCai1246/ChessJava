@@ -70,6 +70,11 @@ public class Bishop extends Piece {
         return Collections.unmodifiableList(legalMoves);
     }
 
+    @Override
+    public Bishop movePiece(Move move) {
+        return new Bishop(move.getDestinationCoordinate(), move.getMovedPiece().getPieceColor());
+    }
+
     private static boolean isFirstColumnExclusion(final int currentPosition, int offset) {
         if (BoardUtils.FIRST_COLUMN[currentPosition] && ((offset == -9) || (offset == -7))) {
             return true;
